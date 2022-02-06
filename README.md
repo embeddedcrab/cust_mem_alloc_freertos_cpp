@@ -1,9 +1,9 @@
-# cust_mem_alloc_freertos_cpp
+# C++ Custom Memory Allocator with FreeRTOS Heap
 C++ Custom Memory Allocator using FreeRTOS Heap
 
 If you are working on an embedded project which utilizes FreeRTOS with C++ then this would be interesting to you.
 
-It is a Custom Memory Allocator which uses FreeRTOS Heap internally for Dynamic Memory Allocation and Usage.
+It is a Custom Memory Allocator which uses FreeRTOS Heap internally for Dynamic Memory Allocation/Usage.
 
 You can use it with C++ STL functionalities such as; vector, set, shared pointer, map etc..
 
@@ -16,15 +16,6 @@ If you are working on Micro-Controller then you can define a particular RAM Memo
 [I tested it using mingw64 Compiler on Windows system].
 
 
-Folder Structure:
-inc
-	-	allocator.h	[Memory Allocator]
-	-	heap.h	[FreeRTOS Heap Header]
-	-	mem.h	[Wrapper header]
-src
-	-	heap.cpp	[FreeRTOS Heap SOurce File]
-
-main.cpp	[Main Source file, containing example]
 
 
 
