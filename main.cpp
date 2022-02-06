@@ -143,38 +143,12 @@ void printHeapStats( HeapStats_t* pstats )
 }
 
 
-// struct Example
-// {
-//   int value;
-
-//   Example(int v) :
-//       value(v)
-//   {}
-
-//   bool operator<(Example const& other) const
-//   {
-//       return value < other.value;
-//   }
-// };
-
-
-CustomMAllocator<int> intAlloc;
-
-
 int main()
 {
 
   HeapStats_t heapStats{};
   vPortGetHeapStats(&heapStats);
   printHeapStats(&heapStats);
-
-  // {
-  //   std::set<Example, std::less<Example>, allocator<Example, CustomMAllocator<Example>>> foo;
-  //   foo.insert(Example(3));
-  //   foo.insert(Example(1));
-  //   foo.insert(Example(4));
-  //   foo.insert(Example(2));
-  // }
 
   {
     std::vector<int, CustomMAllocator<int>> myVect(8);
@@ -188,20 +162,8 @@ int main()
     }
   }
 
-  // {
-  //   std::shared_ptr<int> ptr = std::allocate_shared<int>(intAlloc, 5);
-
-  //   std::map<int, std::string, std::less<int>, allocator<std::pair<const int, std::string>, CustomMAllocator<std::pair<int, std::string>>>> myMap;
-  //   myMap.emplace(std::make_pair(5, "Hello"));
-  // }
-
-  // {
-  //   std::map<int, Example, std::less<int>, allocator<std::pair<const int, Example>, CustomMAllocator<std::pair<int, Example>>>> myMap;
-  //   myMap.emplace(std::make_pair(5, Example(1)));
-  // }
   vPortGetHeapStats(&heapStats);
   printHeapStats(&heapStats);
 
-  std::cout << "End\n";
   return 0;
 }
